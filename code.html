@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Strategic Delivery Thinking Professional | Agile fun!</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Lora:ital,wght@0,400;0,700;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#FFD500",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#000000",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Lora", "serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        :root {
+        --primary-color: #FFD500;
+    }
+
+    /* Fuentes globales */
+    body {
+        font-family: 'Manrope', sans-serif;
+    }
+    .serif-title {
+        font-family: 'Lora', serif;
+    }
+
+    /* Header */
+    .sticky-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+    }
+
+    /* Listas con chevron */
+    .yellow-chevron-list li {
+        position: relative;
+        padding-left: 2rem;
+        margin-bottom: 0.75rem;
+    }
+    .yellow-chevron-list li::before {
+        content: 'chevron_right';
+        font-family: 'Material Symbols Outlined';
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
+    /* Acordeones */
+    .accordion-item[open] .summary-icon {
+        transform: rotate(180deg);
+    }
+</style>
+</head>
+
+<body class="bg-background-light text-black font-display">
+    <div class="bg-primary py-2.5 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
+            <p class="font-bold flex items-center gap-2">
+                <span class="material-symbols-outlined text-lg">calendar_month</span>
+                Próximo inicio: 15 de Octubre, 2024
+            </p>
+            <button
+                class="bg-black text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-wider hover:bg-zinc-800 transition-colors">
+                ¡Quiero mi cupo!
+            </button>
+        </div>
+    </div>
+    <header class="sticky-header border-b border-slate-200 bg-white/95 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="text-primary">
+                    <svg class="w-8 h-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13.8261 17.4264C16.7203 18.1174 20.2244 18.5217 24 18.5217C27.7756 18.5217 31.2797 18.1174 34.1739 17.4264C36.9144 16.7722 39.9967 15.2331 41.3563 14.1648L24.8486 40.6391C24.4571 41.267 23.5429 41.267 23.1514 40.6391L6.64374 14.1648C8.00331 15.2331 11.0856 16.7722 13.8261 17.4264Z"
+                            fill="currentColor"></path>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-extrabold tracking-tight">Agile fun!</h2>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-sm font-semibold hover:text-primary transition-colors" href="#why">Por qué</a>
+                <a class="text-sm font-semibold hover:text-primary transition-colors" href="#program">Temario</a>
+                <a class="text-sm font-semibold hover:text-primary transition-colors" href="#whom">Para quién</a>
+                <a class="text-sm font-semibold hover:text-primary transition-colors" href="#instructor">Tu
+                    Instructora</a>
+            </nav>
+            <button
+                class="bg-primary text-black px-6 py-2.5 rounded-lg font-bold text-sm tracking-wide hover:brightness-95 transition-all shadow-sm">
+                Inscribirme
+            </button>
+        </div>
+    </header>
+    <section class="bg-black text-white relative overflow-hidden">
+        <div
+            class="max-w-7xl mx-auto px-6 py-20 md:py-32 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-8">
+                <div class="inline-block bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm border border-white/20">
+                    <p class="text-primary font-bold text-sm uppercase tracking-widest">Masterclass Online</p>
+                </div>
+                <h1 class="text-5xl md:text-7xl serif-title leading-tight">
+                    Strategic Delivery Thinking Masterclass
+                </h1>
+                <p class="text-xl md:text-2xl font-light text-slate-300">
+                    Porque <span class="text-primary italic font-semibold">REAL</span> Agile es FUN! 🚀
+                </p>
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl inline-flex flex-col gap-4">
+                    <p class="text-sm font-bold uppercase tracking-wider text-slate-400">Próxima cohorte inicia en:</p>
+                    <div class="flex gap-6">
+                        <div class="text-center">
+                            <span id="days" class="block text-4xl font-black text-primary">07</span>
+                            <span class="text-xs uppercase text-slate-400">Días</span>
+                        </div>
+                        <div class="text-center">
+                            <span id="hours" class="block text-4xl font-black text-primary">08</span>
+                            <span class="text-xs uppercase text-slate-400">Horas</span>
+                        </div>
+                        <div class="text-center">
+                            <span id="minutes" class="block text-4xl font-black text-primary">52</span>
+                            <span class="text-xs uppercase text-slate-400">Min</span>
+                        </div>
+                        <div class="text-center">
+                            <span id="seconds" class="block text-4xl font-black text-primary">29</span>
+                            <span class="text-xs uppercase text-slate-400">Seg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <button
+                        class="bg-primary text-black px-10 py-4 rounded-lg font-black text-lg hover:scale-105 transition-transform shadow-xl shadow-primary/20">
+                        Asegurar mi lugar
+                    </button>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="relative aspect-video bg-slate-900 rounded-2xl overflow-hidden border border-white/10">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/vimtwE7pUA4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-primary"></div>
+                    <div class="absolute top-4 left-4 bg-primary text-black text-xs font-black px-3 py-1 rounded">DELIVERY MANAGEMENT</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-white" id="why">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl serif-title mb-6">¿Por qué llevar este curso?</h2>
+                <p class="text-slate-600 text-lg">Eleva tu perfil de ejecutor a estratega del delivery. No se trata solo
+                    de agilidad, se trata de entrega de valor real.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="text-center space-y-4">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-4xl">🚀</span>
+                    </div>
+                    <h3 class="text-xl font-bold">Foco en Resultados</h3>
+                    <p class="text-slate-600 leading-relaxed">Pasa de medir la velocidad a medir el impacto real en el
+                        negocio y la satisfacción del cliente final.</p>
+                </div>
+                <div class="text-center space-y-4">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-4xl">💡</span>
+                    </div>
+                    <h3 class="text-xl font-bold">Pensamiento Estratégico</h3>
+                    <p class="text-slate-600 leading-relaxed">Aprende a diagnosticar flujos de valor y a tomar
+                        decisiones basadas en datos sistémicos.</p>
+                </div>
+                <div class="text-center space-y-4">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-4xl">📈</span>
+                    </div>
+                    <h3 class="text-xl font-bold">Escalabilidad Real</h3>
+                    <p class="text-slate-600 leading-relaxed">Domina la gestión de dependencias y cuellos de botella en
+                        entornos complejos y de alto crecimiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-slate-50" id="program">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl serif-title text-center mb-16">Temario Detallado</h2>
+            <div class="space-y-4">
+                <details class="accordion-item bg-white border border-slate-200 rounded-xl overflow-hidden group">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="bg-primary text-black font-black w-8 h-8 rounded-full flex items-center justify-center text-sm">01</span>
+                            <h3 class="text-xl font-bold">The 6 Pillars of Strategic Delivery</h3>
+                        </div>
+                        <span class="material-symbols-outlined summary-icon transition-transform">expand_more</span>
+                    </summary>
+                    <div class="p-6 border-t border-slate-100 text-slate-600 bg-slate-50/50">
+                        <ul class="space-y-3">
+                            <li class="flex gap-2 items-start"><span class="text-primary font-bold">▸</span> Mindset de
+                                entrega estratégica vs. operativa.</li>
+                            <li class="flex gap-2 items-start"><span class="text-primary font-bold">▸</span> Los 6
+                                pilares que sostienen un delivery de alto rendimiento.</li>
+                            <li class="flex gap-2 items-start"><span class="text-primary font-bold">▸</span> Alineación
+                                estratégica y cascada de objetivos (OKR).</li>
+                        </ul>
+                    </div>
+                </details>
+                <details class="accordion-item bg-white border border-slate-200 rounded-xl overflow-hidden group">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="bg-primary text-black font-black w-8 h-8 rounded-full flex items-center justify-center text-sm">02</span>
+                            <h3 class="text-xl font-bold">Value Stream Mapping (VSM)</h3>
+                        </div>
+                        <span class="material-symbols-outlined summary-icon transition-transform">expand_more</span>
+                    </summary>
+                    <div class="p-6 border-t border-slate-100 text-slate-600 bg-slate-50/50">
+                        <ul class="space-y-3">
+                            <li class="flex gap-2 items-start"><span class="text-primary font-bold">▸</span>
+                                Identificación de desperdicios en el flujo actual.</li>
+                            <li class="flex gap-2 items-start"><span class="text-primary font-bold">▸</span> Cálculo de
+                                eficiencia del flujo (Flow Efficiency).</li>
+                            <li class="flex gap-2 items-start"><span class="text-primary font-bold">▸</span> Diseño del
+                                estado futuro optimizado.</li>
+                        </ul>
+                    </div>
+                </details>
+                <details class="accordion-item bg-white border border-slate-200 rounded-xl overflow-hidden group">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="bg-primary text-black font-black w-8 h-8 rounded-full flex items-center justify-center text-sm">03</span>
+                            <h3 class="text-xl font-bold">Dependency Management &amp; Risk</h3>
+                        </div>
+                        <span class="material-symbols-outlined summary-icon transition-transform">expand_more</span>
+                    </summary>
+                    <div class="p-6 border-t border-slate-100 text-slate-600 bg-slate-50/50">
+                        <ul class="space-y-3">
+                            <li class="flex gap-2 items-start"><span class="text-primary font-bold">▸</span> Matrices de
+                                dependencias y planes de mitigación.</li>
+                            <li class="flex gap-2 items-start"><span class="text-primary font-bold">▸</span> Gestión de
+                                riesgos proactiva vs. reactiva.</li>
+                            <li class="flex gap-2 items-start"><span class="text-primary font-bold">▸</span>
+                                Herramientas para visibilizar bloqueos organizacionales.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-black text-white rounded-3xl p-12 overflow-hidden relative">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
+                    <div class="space-y-4">
+                        <span class="material-symbols-outlined text-primary text-4xl">timer</span>
+                        <h4 class="font-bold text-lg">Duración</h4>
+                        <p class="text-slate-400">4 semanas / 16 horas de instrucción directa.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <span class="material-symbols-outlined text-primary text-4xl">videocam</span>
+                        <h4 class="font-bold text-lg">Formato</h4>
+                        <p class="text-slate-400">Sesiones en vivo vía Zoom (100% interactivas).</p>
+                    </div>
+                    <div class="space-y-4">
+                        <span class="material-symbols-outlined text-primary text-4xl">cloud_done</span>
+                        <h4 class="font-bold text-lg">Grabaciones</h4>
+                        <p class="text-slate-400">Acceso de por vida a las grabaciones del curso.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <span class="material-symbols-outlined text-primary text-4xl">badge</span>
+                        <h4 class="font-bold text-lg">Certificación</h4>
+                        <p class="text-slate-400">Certificado de aprobación por Agile Fun!</p>
+                    </div>
+                </div>
+                <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-slate-50 border-y border-slate-100" id="instructor">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative">
+                        <div
+                            class="w-64 h-64 md:w-80 md:h-80 rounded-full border-8 border-primary overflow-hidden shadow-2xl">
+                            <img alt="Instructor Profile" class="w-full h-full object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzOrP0-PuUCzBkYvcsd6KdfRNBz21xR-VBLegvT6-pCXHii77LpY2QVSrpT98neSC2inPxswjUKUgNLyxqHQADkLG6y1YoomQy8ycIFyeAB9wne28fK31Hq9_ymS3rBxqYtQGJiXxe4QxsBmJRQIYqqaHN-JEGvxtwhNpn93JNWGrACNJtP0lodNEMuhYXLk2KCSKY22HnfozcW7ysb12rtjPHZt-d1zkk46ddTblhjLFQM3znxzMPTEJGteYecJ_B6Ymez2bi45E" />
+                        </div>
+                        <div
+                            class="absolute -bottom-4 -right-4 bg-black text-white p-4 rounded-2xl shadow-lg border border-primary/20">
+                            <p class="font-black text-sm tracking-tighter uppercase">Senior Expert</p>
+                            <p class="text-primary text-xs uppercase tracking-widest font-bold">15+ Años Exp.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 space-y-6">
+                    <h2 class="text-4xl serif-title">Tu Instructora</h2>
+                    <div class="space-y-4 text-slate-700 leading-relaxed text-lg">
+                        <p>Soy <span class="font-bold text-black">Agile Team Coach y Scrum Master Senior</span>,
+                            Contadora Pública Colegiada, con más de 15 años de experiencia impulsando procesos
+                            sistémicos en equipos ágiles.</p>
+                        <p>Facilito la adopción de diversos modelos de trabajo, el desarrollo de soluciones tecnológicas
+                            y el análisis y documentación integral de procesos, así como de requerimientos técnicos y de
+                            negocio.</p>
+                        <p>He desempeñado roles como Analista Funcional, Product Owner, Facilitador Ágil, Coach de
+                            Agilidad y Delivery Manager en el sector de banca &amp; finanzas. Actualmente soy
+                            instructora autorizada para el curso ICP-APM.</p>
+                    </div>
+                    <a class="inline-flex items-center gap-2 bg-primary text-black px-6 py-3 rounded-lg font-black hover:brightness-95 transition-all shadow-md"
+                        href="#">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                            </path>
+                        </svg>
+                        Conectar en LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-white" id="whom">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h2 class="text-4xl serif-title mb-8">¿Para quién es adecuado este curso?</h2>
+                    <ul
+                        class="yellow-chevron-list text-lg font-medium space-y-4 grid grid-cols-1 md:grid-cols-2 gap-x-8">
+                        <li>Delivery Managers</li>
+                        <li>Scrum Masters</li>
+                        <li>Product Owners</li>
+                        <li>Agile Coaches</li>
+                        <li>Project Managers</li>
+                        <li>Release Train Engineers</li>
+                        <li>Engineering Managers</li>
+                        <li>Business Analysts</li>
+                    </ul>
+                </div>
+                <div
+                    class="bg-primary p-12 rounded-3xl relative overflow-hidden flex flex-col justify-center min-h-[400px]">
+                    <div class="relative z-10 text-black">
+                        <p class="text-4xl font-black mb-4">Ideal si buscas...</p>
+                        <p class="text-xl opacity-90 mb-6">Convertirte en un referente de entrega en tu organización,
+                            optimizando flujos y garantizando valor constante.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="bg-black/5 px-4 py-2 rounded-lg font-bold border border-black/10">Liderazgo
+                                Estratégico</span>
+                            <span class="bg-black/5 px-4 py-2 rounded-lg font-bold border border-black/10">Visión de
+                                Producto</span>
+                            <span class="bg-black/5 px-4 py-2 rounded-lg font-bold border border-black/10">Eficiencia
+                                Operativa</span>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-black/5 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-slate-50" id="pricing">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl serif-title mb-16">Inversión</h2>
+            <div class="max-w-md mx-auto bg-white rounded-3xl border-2 border-primary shadow-2xl overflow-hidden">
+                <div class="p-12 space-y-8">
+                    <div class="space-y-2">
+                        <p class="text-slate-500 font-bold uppercase tracking-widest text-sm">Pago Único</p>
+                        <p class="text-6xl font-black text-black">$349<span class="text-xl text-slate-400">USD</span>
+                        </p>
+                    </div>
+                    <ul class="text-left space-y-4 text-slate-600">
+                        <li class="flex items-center gap-3"><span
+                                class="material-symbols-outlined text-green-500">check_circle</span> 16 horas de
+                            formación en vivo</li>
+                        <li class="flex items-center gap-3"><span
+                                class="material-symbols-outlined text-green-500">check_circle</span> Toolkit de
+                            plantillas VSM</li>
+                        <li class="flex items-center gap-3"><span
+                                class="material-symbols-outlined text-green-500">check_circle</span> Comunidad privada
+                            en Discord</li>
+                        <li class="flex items-center gap-3"><span
+                                class="material-symbols-outlined text-green-500">check_circle</span> Certificado oficial
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full bg-primary text-black py-4 rounded-xl font-black text-lg hover:scale-[1.02] transition-transform shadow-lg shadow-primary/20">
+                        Inscribirme ahora
+                    </button>
+                    <p class="text-xs text-slate-400">Garantía de satisfacción de 7 días o devolución completa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl serif-title text-center mb-16">Testimonios</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 flex flex-col h-full">
+                    <p class="text-slate-600 mb-8 italic">"Alex posee una gran capacidad para la enseñanza. Participé en
+                        las masterclass de diversos modelos de trabajo, el desarrollo de soluciones procesos de entrega.
+                        No solo dominó el tema con casos de éxito, sino que también tiene un ambiente de aprendizaje
+                        dinámico y colaborativo."</p>
+                    <div class="mt-auto flex items-center gap-4 border-t border-slate-200 pt-6">
+                        <img alt="" class="w-12 h-12 rounded-full border-2 border-primary"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgkAgNxeN-0f1JWEvL3Y63_o3kGhCQA0VoPguKAGKBqNeOSW88f9anq7CAc1p-vkvO3QClebJxnd49VUig8b2VvTPkGoPmwGbj99tR-q7vbgMVtRRQu4FJ9KGmj9j7BGGxhN0hs3M2vBJ_eunQcyYZAQckAVybO-ft05JB4_MrC7zCuZbvX4KM_EGpK2gYH0EtEwl3xG_TPdZd4xP2SXY2x-hWQbekcHKSugXI8tRONnb6lOFEZ0rNFz0k6zv-FGMLvaG-KYOKt2k" />
+                        <div>
+                            <h4 class="font-bold text-sm">Mónica Cáceres</h4>
+                            <p class="text-xs text-slate-500">Project Manager | ICP-APM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 flex flex-col h-full">
+                    <p class="text-slate-600 mb-8 italic">"Quiero recomendar de manera especial a Alex por el excelente
+                        dictado del curso Agile Project and Delivery Management. Su forma de enseñar, la claridad con la
+                        que transmite conceptos complejos y la capacidad de conectar la teoría con la práctica hicieron
+                        que el aprendizaje fuera realmente valioso."</p>
+                    <div class="mt-auto flex items-center gap-4 border-t border-slate-200 pt-6">
+                        <img alt="" class="w-12 h-12 rounded-full border-2 border-primary"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnd7wAAiGUwTtdETiNMSg5Zg8BJIcw86Kk5WbynlQy7ksxLbpGjs8NW2aJqc1yPqwdbiO40fU3yKgrnEYRM7uryq8dwOpP38Oyn_uLshF-sG61HuOmnGt1Ul9lL-FuTUJUsrGlzyA1q6ob7vehQnJ7KvcyhZ2jCgEDKpXksNC3gIfopo3PekQbgFF4tth1ATkJw0BRprHe71ugMI92xAHRxxbXFOxFkEbsY7_7mXQ57Bn6rAg_lgXU7uEom-Mqo4V5tSl-1PcfPBM" />
+                        <div>
+                            <h4 class="font-bold text-sm">Cristian Alvarado</h4>
+                            <p class="text-xs text-slate-500">Agile Coach | Scrum Master</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 flex flex-col h-full">
+                    <p class="text-slate-600 mb-8 italic">"Tuve la oportunidad de participar en el curso de Delivery
+                        Management dictado por Alex, y quiero expresar mi sincero agradecimiento por el aprendizaje de
+                        tan alto nivel. Alex demuestra un profundo conocimiento en el tema, el cual transmite con mucha
+                        claridad y paciencia."</p>
+                    <div class="mt-auto flex items-center gap-4 border-t border-slate-200 pt-6">
+                        <img alt="" class="w-12 h-12 rounded-full border-2 border-primary"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeHhL8bemxEq8hJk3-1Mau0YfpbCX_8Yn8upeh9Yms4EakCL14yOAou1CNuih1H_RmpvlmcB7UyWgPfCN7pxjY-ibWOz3v9QWXYz8-xLBGKl_s2B1BtzAttlQ542xp0HiS75c2gaLDBgEmW5LuEkRj0zsCW4cC_9vMDnfdyR2xt3mNeyZw9lg4uJen_pBJDHnRkqrKDqjVyfVzArU0S35jfIU5WgfQKa9P-Rxp1uWVoWfpMo7tHjOplRA_aTtcLlCDDCl_fusq5Xk" />
+                        <div>
+                            <h4 class="font-bold text-sm">Steiner Martin</h4>
+                            <p class="text-xs text-slate-500">Agile Lead | Digital Transformation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-4xl serif-title text-center mb-16">Preguntas Frecuentes</h2>
+            <div class="space-y-4">
+                <details class="accordion-item bg-white border border-slate-200 rounded-xl overflow-hidden group">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <h3 class="font-bold">¿Necesito conocimientos previos de agilidad?</h3>
+                        <span class="material-symbols-outlined summary-icon transition-transform">expand_more</span>
+                    </summary>
+                    <div class="p-6 border-t border-slate-100 text-slate-600">
+                        Es recomendable tener experiencia básica trabajando en equipos ágiles o gestión de proyectos, ya
+                        que el curso se enfoca en niveles estratégicos y avanzados.
+                    </div>
+                </details>
+                <details class="accordion-item bg-white border border-slate-200 rounded-xl overflow-hidden group">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <h3 class="font-bold">¿Entregan certificado al finalizar?</h3>
+                        <span class="material-symbols-outlined summary-icon transition-transform">expand_more</span>
+                    </summary>
+                    <div class="p-6 border-t border-slate-100 text-slate-600">
+                        Sí, al completar satisfactoriamente el curso y las actividades prácticas, recibirás un
+                        certificado digital avalado por Agile Fun!
+                    </div>
+                </details>
+                <details class="accordion-item bg-white border border-slate-200 rounded-xl overflow-hidden group">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <h3 class="font-bold">¿Qué pasa si me pierdo una sesión en vivo?</h3>
+                        <span class="material-symbols-outlined summary-icon transition-transform">expand_more</span>
+                    </summary>
+                    <div class="p-6 border-t border-slate-100 text-slate-600">
+                        Todas las sesiones son grabadas y subidas a nuestra plataforma de alumnos en menos de 24 horas
+                        para que puedas verlas cuando prefieras.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-black text-white">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-4xl serif-title mb-4">¿Buscas otra fecha?</h2>
+            <p class="text-slate-400 mb-12 text-lg">Súmate a nuestra lista de espera, déjanos saber cuál sería el mes de
+                tu preferencia para enviarte fechas propuestas.</p>
+            <form class="space-y-6 text-left">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-300">Nombre</label>
+                        <input
+                            class="w-full bg-transparent border-2 border-primary focus:border-primary rounded-xl px-4 py-3 text-white transition-all outline-none"
+                            placeholder="Tu nombre" type="text" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-slate-300">Email</label>
+                        <input
+                            class="w-full bg-transparent border-2 border-primary focus:border-primary rounded-xl px-4 py-3 text-white transition-all outline-none"
+                            placeholder="tu@correo.com" type="email" />
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-2 text-slate-300">Mensaje</label>
+                    <textarea
+                        class="w-full bg-transparent border-2 border-primary focus:border-primary rounded-xl px-4 py-3 text-white transition-all outline-none"
+                        placeholder="¿En qué mes te gustaría participar?" rows="4"></textarea>
+                </div>
+                <button
+                    class="w-full bg-primary text-black py-4 rounded-xl font-black text-lg hover:brightness-90 transition-all shadow-lg shadow-primary/10"
+                    type="submit">
+                    Sumarme
+                </button>
+            </form>
+        </div>
+    </section>
+    <footer class="bg-black text-white py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2 space-y-6">
+                    <div class="flex items-center gap-2">
+                        <div class="text-primary">
+                            <svg class="w-10 h-10" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.8261 17.4264C16.7203 18.1174 20.2244 18.5217 24 18.5217C27.7756 18.5217 31.2797 18.1174 34.1739 17.4264C36.9144 16.7722 39.9967 15.2331 41.3563 14.1648L24.8486 40.6391C24.4571 41.267 23.5429 41.267 23.1514 40.6391L6.64374 14.1648C8.00331 15.2331 11.0856 16.7722 13.8261 17.4264Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-black tracking-tighter">Agile fun!</h2>
+                    </div>
+                    <p class="text-slate-400 max-w-sm">
+                        Empowering professionals to find the joy in delivery through strategic thinking and modern agile
+                        practices.
+                    </p>
+                    <p class="text-primary font-black serif-title text-xl mt-8">APRENDER, PRACTICAR Y DISFRUTAR!</p>
+                </div>
+                <div>
+                    <h5 class="font-bold text-lg mb-6">Contacto</h5>
+                    <ul class="space-y-4 text-slate-400">
+                        <li class="hover:text-primary cursor-pointer transition-colors">hello@agilefun.com</li>
+                        <li class="hover:text-primary cursor-pointer transition-colors">Remoto / Global</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold text-lg mb-6">Síguenos</h5>
+                    <div class="flex gap-6">
+                        <a class="text-slate-400 hover:text-primary transition-all" href="#">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="pt-8 border-t border-white/5 text-slate-500 text-sm flex flex-col md:flex-row justify-between gap-4">
+                <p>© 2024 Strategic Delivery Thinking Professional. Todos los derechos reservados.</p>
+                <div class="flex gap-8">
+                    <a class="hover:text-white" href="#">Políticas de Privacidad</a>
+                    <a class="hover:text-white" href="#">Términos de Servicio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
