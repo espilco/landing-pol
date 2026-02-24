@@ -293,22 +293,22 @@
             <div class="bg-black text-white rounded-3xl p-12 overflow-hidden relative">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
                     <div class="space-y-4">
-                        <span class="material-symbols-outlined text-primary text-4xl"><?php echo htmlspecialchars(get_content('info', 'duration_title')); ?></span>
+                        <span class="material-symbols-outlined text-primary text-4xl">timer</span>
                         <h4 class="font-bold text-lg"><?php echo htmlspecialchars(get_content('info', 'duration_title')); ?></h4>
                         <p class="text-slate-400"><?php echo htmlspecialchars(get_content('info', 'duration_text')); ?></p>
                     </div>
                     <div class="space-y-4">
-                        <span class="material-symbols-outlined text-primary text-4xl"><?php echo htmlspecialchars(get_content('info', 'format_title')); ?></span>
+                        <span class="material-symbols-outlined text-primary text-4xl">videocam</span>
                         <h4 class="font-bold text-lg"><?php echo htmlspecialchars(get_content('info', 'format_title')); ?></h4>
                         <p class="text-slate-400"><?php echo htmlspecialchars(get_content('info', 'format_text')); ?></p>
                     </div>
                     <div class="space-y-4">
-                        <span class="material-symbols-outlined text-primary text-4xl"><?php echo htmlspecialchars(get_content('info', 'recordings_title')); ?></span>
+                        <span class="material-symbols-outlined text-primary text-4xl">cloud_done</span>
                         <h4 class="font-bold text-lg"><?php echo htmlspecialchars(get_content('info', 'recordings_title')); ?></h4>
                         <p class="text-slate-400"><?php echo htmlspecialchars(get_content('info', 'recordings_text')); ?></p>
                     </div>
                     <div class="space-y-4">
-                        <span class="material-symbols-outlined text-primary text-4xl"><?php echo htmlspecialchars(get_content('info', 'certification_title')); ?></span>
+                        <span class="material-symbols-outlined text-primary text-4xl">badge</span>
                         <h4 class="font-bold text-lg"><?php echo htmlspecialchars(get_content('info', 'certification_title')); ?></h4>
                         <p class="text-slate-400"><?php echo htmlspecialchars(get_content('info', 'certification_text')); ?></p>
                     </div>
